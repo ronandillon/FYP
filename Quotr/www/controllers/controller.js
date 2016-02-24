@@ -1,0 +1,3 @@
+Quotr.controller('Controller',function() {
+	
+});
