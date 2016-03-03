@@ -27,9 +27,12 @@ Quotr.config(['$routeProvider', function($routeProvider) {
       redirectTo: '/home'
     });
 }]);
+document.addEventListener("deviceready", onDeviceReady, false);
 
+function onDeviceReady() {     
+        $('#uhoh').text('Device UUID: '+ device.uuid);
+}
 Quotr.run(['$rootScope','$location', function($rootScope,$location){
-	
 	$rootScope.$on('$routeChangeError',function(event,next,previous,error){
 		if(error=='AUTH_REQUIRED'){
 			$rootScope.message='Sorry, you must log in to access that page';

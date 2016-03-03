@@ -13,7 +13,7 @@ response = urllib2.urlopen (url + query ).read()
 data = json.loads ( response )
 
 results = data [ 'responseData' ] [ 'results' ]
-
+print results
 for result in results:
     title = result['title']
     url = result['url']

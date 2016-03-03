@@ -1,16 +1,18 @@
 import requests
 import json
 import urllib2
+import sqlite3
+
+conn = sqlite3.connect('testytest.db')
+
+title="The Simpsons"
 
 
-title="Game+Of+Thrones"
-
+#API CALL
 re = requests.get("http://www.omdbapi.com/?t="+title+"&tomatoes=true&plot=full").json()
-print re
 
-print
-print
 
+print re["imdbID"]
 print re["Title"]
 print re["Plot"]
 print re["Rated"]
@@ -27,3 +29,18 @@ print re["Awards"]
 print re["Genre"]
 print re["imdbRating"]
 print re["Runtime"]
+
+c = conn.cursor()
+
+#Check if searched for show is already in Database
+query =c.execute("SELECT * FROM Show WHERE imdbID = '"+re['imdbID']+"'")
+returns =query.fetchall()
+#If not put, it in
+if returns == []:
+    c.execute("INSERT INTO Show VALUES (?,?,?,?,1)",(re["imdbID"],re["Title"],re["imdbRating"],re["Poster"]))
+#If it is, increase the count 
+else:
+    c.execute("UPDATE Show SET count = count + 1 WHERE imdbID = '"+re['imdbID']+"'")
+
+conn.commit()
+conn.close()
