@@ -23,6 +23,16 @@ Quotr.config(['$routeProvider', function($routeProvider) {
       controller: 'Controller',
       
     }).
+    when('/search', {
+      templateUrl: 'views/search.html',
+      controller: 'Controller',
+
+    }).
+      when('/result', {
+      templateUrl: 'views/result.html',
+      controller: 'Controller',
+
+    }).
     otherwise({
       redirectTo: '/home'
     });
@@ -30,7 +40,15 @@ Quotr.config(['$routeProvider', function($routeProvider) {
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {     
-        $('#uhoh').text('Device UUID: '+ device.uuid);
+	//$('#uhoh').text('Device UUID: '+ device.uuid);
+	
+	sUrl = 'http://52.30.239.185/search/scup/wup'
+	$.get(sUrl,function(data) {
+       alert('page content: ' + data);
+	   $('#uhoh').text(data);
+    }
+);
+		
 }
 Quotr.run(['$rootScope','$location', function($rootScope,$location){
 	$rootScope.$on('$routeChangeError',function(event,next,previous,error){
