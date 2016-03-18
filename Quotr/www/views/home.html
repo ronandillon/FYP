@@ -1,9 +1,8 @@
  <section class="card home">
-
- <div class="centerAlign" >
+ <div style="margin-top:200px;" align="center">
 	
-
-	<svg id="tagButton" width="360" height="360"  ng-click="record()" >
+	<div class="col-md-4 col-md-offset-4">
+	<svg id="tagButton" width="360" height="360" >
 		<!-- Main Circle -->
 		<circle cx="200" cy="200" r="160"  stroke-width="4" style="fill:rgb(255,255,255);" />
 
@@ -48,13 +47,30 @@
 		<line x1="265" y1="265" x2="265" y2="235" stroke="black" stroke-width="5" />
 	</svg> 
 	</div>
-
-
- <div class="centerText" >
+	<div id="searchText">
+		<form ng-submit="search()">
+			<textarea rows="4" class="col-md-4 col-md-offset-4"></textarea>
+			<div class="col-md-4 col-md-offset-4">
+			<button class="btn btn-default" style="float:left">Cancel</button>
+			<button type="submit" class="btn btn-default" style="float:right">Submit</button>
+			
+			</div>
+		</form>
+	</div>
+	<br>
+   
    <h1>Press To Tag Your Show Or Movie</h1>
+	<h1 id="uhoh">HI</h1>
+	
+	</div>
 
 
- </div>
+	<!-- FOOTER -->
+	<footer>
+	<p class="pull-right"><a href="#">Back to top</a></p>
+	<p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+	</footer>
 
+</div>
 </section>
 	

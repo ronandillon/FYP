@@ -1,0 +1,11 @@
+{
+    "com.phonegap.plugins.speech": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/poiuytrez/SpeechRecognizer",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

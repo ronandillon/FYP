@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Speech Recognition plugin demo</title>
+		<meta http-equiv="Content-Security-Policy"/>
+        <script type="text/javascript" src="cordova.js"></script>
+    </head>
+    <body>
+
+        <script type="text/javascript">
+
+            function onDeviceReady(){
+				alert("device ready");
+                  alert(window);
+				alert(window.plugins.speechrecognizer);
+            }
+
+            function recognizeSpeech() {
+				
+                var maxMatches = 1;
+                var promptString = "Speak now"; // optional
+                var language = "en-US";                     // optional
+                window.plugins.speechrecognizer.startRecognize(function(result){
+					alert("Why u do dis");
+                    alert(result);
+                }, function(errorMessage){
+					alert("Why u do dis");
+                    console.log("Error message: " + errorMessage);
+                }, maxMatches, promptString, language);
+				alert("Why u do dis");
+            }
+
+            // Show the list of the supported languages
+            function getSupportedLanguages() {
+				
+                window.plugins.speechrecognizer.getSupportedLanguages(function(languages){
+					alert("Why u do dis");
+                    // display the json array
+                    alert(languages);
+                }, function(error){
+                    alert("Could not retrieve the supported languages : " + error);
+                });
+				alert("hello");
+            }
+
+            document.addEventListener("deviceready", onDeviceReady, true);
+        </script>
+
+        <button onclick="recognizeSpeech();">Start recognition</button>
+        <button onclick="getSupportedLanguages();">Get Supported Languages</button>
+    </body>
+</html>

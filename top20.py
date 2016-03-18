@@ -4,7 +4,14 @@ import sqlite3
 
 conn = sqlite3.connect('testytest.db')
 c = conn.cursor()
-query =c.execute("SELECT * FROM Show ORDER BY count DESC LIMIT 20")
+query =c.execute("SELECT * FROM Searched")
+
+
+#c.execute("INSERT INTO Searched VALUES (1,'help')")
+conn.commit()
+
+#c.execute("INSERT INTO Searched VALUES (22,"+title+") SELECT 22,"+title+" WHERE NOT EXISTS (SELECT 1 FROM Searched WHERE deviceId = 22 AND imdbId="+title+");")
 returns =query.fetchall()
 
-print returns[1][2]
+print returns
+conn.close()

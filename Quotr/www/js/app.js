@@ -11,27 +11,17 @@ Quotr.config(['$routeProvider', function($routeProvider) {
     }).
     when('/top20', {
       templateUrl: 'views/top20.html',
-      controller: 'Controller'
+      //controller: 'Controller'
       
     }).
     when('/history', {
       templateUrl: 'views/history.html',
-      controller: 'Controller'
+      //controller: 'Controller'
     }).
     when('/about', {
       templateUrl: 'views/about.html',
-      controller: 'Controller',
+      //controller: 'Controller',
       
-    }).
-    when('/search', {
-      templateUrl: 'views/search.html',
-      controller: 'Controller',
-
-    }).
-      when('/result', {
-      templateUrl: 'views/result.html',
-      controller: 'Controller',
-
     }).
     otherwise({
       redirectTo: '/home'
