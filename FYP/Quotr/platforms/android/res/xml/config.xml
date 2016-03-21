@@ -15,12 +15,12 @@
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
     <allow-intent href="market:*" />
-    <name>HelloCordova</name>
+    <name>Quotr</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        A quote application to return information based on a given quote.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="c12355251@gmail.com">
+        Ronan Dillon.
     </author>
     <content src="index.html" />
     <access origin="*" />

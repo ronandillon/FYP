@@ -29,7 +29,6 @@ Quotr.controller('Controller',['$scope','Home',function($scope,Home) {
 			{
 				$('#season').text(parsed.Season);
 				$('#episode').text(parsed.Episode);
-				url="http://52.30.239.185/search/"+parsed.seriesID+"/"+uuid;
 
 			}
 			$('#plot').text(parsed.Plot);
@@ -49,10 +48,7 @@ Quotr.controller('Controller',['$scope','Home',function($scope,Home) {
 
 
     	});
-		alert(url);
-		/*$.get(url, function(data){
 
-				});*/
 		$("#quoteText").text("");
 		location.href = "#/result";
 

@@ -1,4 +1,4 @@
-var Quotr = angular.module('Quotr', ['ngRoute']).constant('FIREBASE_URL');
+var Quotr = angular.module('Quotr', ['ngRoute','ngMaterial']).constant('FIREBASE_URL');
 
 
 Quotr.config(['$routeProvider', function($routeProvider) {
@@ -39,10 +39,6 @@ Quotr.config(['$routeProvider', function($routeProvider) {
 }]);
 document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() {     
-	//$('#uhoh').text('Device UUID: '+device.uuid);
-
-}
 Quotr.run(['$rootScope','$location', function($rootScope,$location){
 	$rootScope.$on('$routeChangeError',function(event,next,previous,error){
 		if(error=='AUTH_REQUIRED'){
