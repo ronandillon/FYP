@@ -11,8 +11,7 @@ Quotr.factory('Top20', ['$rootScope',function($scope) {
 		    $.get(url, function(data){
 
                 currTop20=JSON.parse(data);
-                alert(currTop20[1][1]);
-
+                displayTop(currTop20);
             });
 
 		},
@@ -23,7 +22,7 @@ Quotr.factory('Top20', ['$rootScope',function($scope) {
 		     $.get(url, function(mdata){
 
                 currmTop20=JSON.parse(mdata);
-                alert(currmTop20[1][1]);
+                displayTop(currmTop20);
 
             });
 
@@ -35,7 +34,7 @@ Quotr.factory('Top20', ['$rootScope',function($scope) {
 		    $.get(url, function(sdata){
 
                 currsTop20=JSON.parse(sdata);
-                alert(currsTop20[1][1]);
+                displayTop(currsTop20);
 
             });
 
@@ -47,11 +46,16 @@ Quotr.factory('Top20', ['$rootScope',function($scope) {
 		     $.get(url, function(edata){
 
                 curreTop20=JSON.parse(edata);
-                alert(curreTop20[1][1]);
+                displayTop(curreTop20);
 
             });
 
 		}
 	};
+
+    function displayTop(list){
+        alert(list[0]);
+
+    };
 
 }]);
