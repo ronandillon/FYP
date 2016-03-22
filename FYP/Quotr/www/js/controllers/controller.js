@@ -51,7 +51,11 @@ Quotr.controller('Controller',['$scope','Home','Result','History','Top20',functi
 		alert("help4");
 		Top20.etop20();
 	};
-
+	$scope.scup= function() {
+		//Top 20 searched episodes
+		alert("scup?");
+		document.write("help");
+	};
 
 
 }]);
