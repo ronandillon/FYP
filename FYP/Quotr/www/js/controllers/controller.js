@@ -1,4 +1,4 @@
-Quotr.controller('Controller',['$scope','Home','Result',function($scope,Home,Result) {
+Quotr.controller('Controller',['$scope','Home','Result','History','Top20',function($scope,Home,Result,History,Top20) {
   
 	var uuid="";
 
@@ -6,7 +6,7 @@ Quotr.controller('Controller',['$scope','Home','Result',function($scope,Home,Res
 	function onDeviceReady() {
     	uuid=device.uuid;
 	}
-	
+
 	$scope.record = function() {
 
 
@@ -16,11 +16,40 @@ Quotr.controller('Controller',['$scope','Home','Result',function($scope,Home,Res
 
 	$scope.search= function() {
 		//Send to contents of text box to result.js service where user will be brought to result page
-		Result.search();
+		Result.search(uuid);
 	};
 	$scope.cancel= function() {
 		//Cancels search
 		Result.cancel();
+	};
+
+
+	$scope.showhistory= function() {
+		//Show history of a user
+
+		History.showhistory(uuid);
+	};
+
+
+	$scope.top20= function() {
+		//Top 20 searched Series and Movies
+
+		Top20.top20();
+	};
+	$scope.mtop20= function() {
+		//Top 20 searched movies
+
+		Top20.mtop20();
+	};
+	$scope.stop20= function() {
+		//Top 20 searched series
+
+		Top20.stop20();
+	};
+	$scope.etop20= function() {
+		//Top 20 searched episodes
+
+		Top20.etop20();
 	};
 
 

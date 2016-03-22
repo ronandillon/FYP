@@ -37,7 +37,7 @@ Quotr.config(['$routeProvider', function($routeProvider) {
       redirectTo: '/home'
     });
 }]);
-document.addEventListener("deviceready", onDeviceReady, false);
+
 
 Quotr.run(['$rootScope','$location', function($rootScope,$location){
 	$rootScope.$on('$routeChangeError',function(event,next,previous,error){
