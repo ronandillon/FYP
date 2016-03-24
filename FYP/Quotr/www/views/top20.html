@@ -1,19 +1,21 @@
  <section class="card top20">
  <div style="margin-top:100px;" align="center">
 
-	 <div data-ng-controller="Controller" data-ng-init="top20()"></div>
 
-	 <button class="btn btn-default" ng-click="top20()" style="float:left">All</button>
-	 <button class="btn btn-default" ng-click="mtop20()" style="float:left">Movies</button>
-	 <button class="btn btn-default" ng-click="stop20()" style="float:left">Series</button>
-	 <button class="btn btn-default" ng-click="etop20()" style="float:left">Episodes</button>
+	 <button class="btn btn-default" ng-click="top20('top20')" style="float:left">All</button>
+	 <button class="btn btn-default" ng-click="top20('mtop20')" style="float:left">Movies</button>
+	 <button class="btn btn-default" ng-click="top20('stop20')" style="float:left">Series</button>
+	 <button class="btn btn-default" ng-click="top20('etop20')" style="float:left">Episodes</button>
 
-	<!--using html bind, for loop with a limit of the length of the array continously incresing whats in the html variable
-		html="starter html stuff"
-		for i=0, i<length , i++
-			html=html+stuff for each element of history
-		html=html+end html stuff
-	 -->
+
+	<div class="column" ng-repeat="column in list" style="display:block;">
+
+		<img  src="{{column[3]}}"  >
+		<h1>{{column[1]}}</h1>
+		<h2>{{column[4]}}</h2>
+		<h3>IMDB RATING : {{column[2]}}</h3>
+        <br>
+    </div>
+
  </div>
 </section>
-	

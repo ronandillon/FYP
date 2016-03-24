@@ -55,6 +55,15 @@
     </tr>
     </table>
 </div>
+ <div  ng-repeat="rec in recommended" style="display:block;">
+
+		 <h1>{{rec[1]}}</h1>
+
+		 <img  src="{{rec[3]}}" >
+
+		 <h3>IMDB RATING : {{rec[2]}}</h3>
+        <br>
+ </div>
 </section>
 
 

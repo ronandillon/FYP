@@ -37,12 +37,12 @@ Quotr.factory('Result', ['$rootScope',function($scope) {
                 $('#language').text(parsed.Language);
                 $('#imdbrating').text(parsed.imdbRating);
                 $('#released').text(parsed.Released);
-
-
+                recommend(parsed.imdbID,uuid);
     	    });
 
             $("#quoteText").text("");
             location.href = "#/result";
+
 
 		},
 
@@ -53,4 +53,12 @@ Quotr.factory('Result', ['$rootScope',function($scope) {
 		}
 	};
 
+    function recommend(imdbId,uuid){
+        url="http://52.30.239.185/ref/"+imdbId+"/"+uuid;
+        alert(url);
+        $.get(url, function(data){
+            rec=JSON.parse(data);
+            $scope.recommended=rec;
+        });
+    };
 }]);

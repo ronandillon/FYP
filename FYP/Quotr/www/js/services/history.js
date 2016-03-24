@@ -1,4 +1,4 @@
-Quotr.factory('History', ['$rootScope',function($scope) {
+Quotr.factory('History', ['$rootScope',function($scope,$http) {
 
     //$("#searchText").hide();
 
@@ -8,12 +8,15 @@ Quotr.factory('History', ['$rootScope',function($scope) {
 
 			url="http://52.30.239.185/history/'"+uuid+"'";
 
-            alert(url);
+
 		    $.get(url, function(data){
-                alert(data);
+				hist=JSON.parse(data);
+                $scope.userhistory=hist;
             });
 
 		}
 	};
 
 }]);
+
+

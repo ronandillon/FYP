@@ -47,6 +47,4 @@ Quotr.run(['$rootScope','$location', function($rootScope,$location){
 		}
 
 	});
-
-
 }]);
