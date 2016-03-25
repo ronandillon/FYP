@@ -12,6 +12,7 @@ Quotr.factory('History', ['$rootScope',function($scope,$http) {
 		    $.get(url, function(data){
 				hist=JSON.parse(data);
                 $scope.userhistory=hist;
+
             });
 
 		}

@@ -1,17 +1,20 @@
 <section class="card history">
- <div style="margin-top:100px;" align="center">
+ <div style="margin-top:100px;" width="100%">
 
 	{{showhistory()}}
-	{{showhistory()}}
-	 <div  ng-repeat="hist in userhistory" style="display:block;">
+	 <table cellspacing="0" cellpadding="0" border="0" width="100%">
+	 <tbody>
+		 <tr  ng-repeat="hist in userhistory" style="display:block;clear:both;">
 
-		 <h1>{{hist[0]}}</h1>
-
-		 <img  src="{{hist[2]}}" >
-
-		 <h3>IMDB RATING : {{hist[1]}}</h3>
-        <br>
-    </div>
-
+			<td>
+				 <img  src="{{hist[2]}}"  height="400"  width="300" >
+			</td>
+			 <td>
+				 <h1>{{hist[0]}}</h1>
+				 <h3>IMDB RATING : {{hist[1]}}</h3>
+			</td>
+		</tr>
+	</tbody>
+	</table>
  </div>
 </section>
