@@ -6,21 +6,26 @@ Quotr.factory('History', ['$rootScope',function($scope,$http) {
 
 		showhistory: function(uuid){
 
-			url="http://52.30.239.185/history/'"+uuid+"'";
-
 			$.ajax({
                 url: 'http://52.30.239.185/history/\''+uuid+'\'',
                 type: 'GET',
                 success: function(data){
-					hist=JSON.parse(data);
-               		$scope.userhistory=hist;
+					if(data=='[]'){
+						 $("#noHistory").text("You have no history yet.");
+					}
+					else {
+						hist = JSON.parse(data);
+						$scope.userhistory = hist;
+					}
 				 },
                 error: function(data) {
-                    alert('woops!'); //or whatever
+                    $("#noHistory").text("You have no history yet.");
                 }
 			});
 
-		    /*$.get(url, function(data){
+		    /*
+		    url="http://52.30.239.185/history/'"+uuid+"'";
+		    $.get(url, function(data){
 				hist=JSON.parse(data);
                 $scope.userhistory=hist;
 

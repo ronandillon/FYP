@@ -6,13 +6,14 @@ Quotr.factory('Result', ['$rootScope','$compile',function($scope,$compile) {
 
 		search: function(uuid,toSearch){
 
-			url="http://52.30.239.185/search/"+toSearch+"/"+uuid;
 
+            $scope.recommended="";
 
             $.ajax({
                 url: 'http://52.30.239.185/search/'+toSearch+'/'+uuid,
                 type: 'GET',
                 success: function(data){
+
                     parsed=JSON.parse(data);
                     if(parsed.Type!="Episode")
                     {
@@ -40,7 +41,7 @@ Quotr.factory('Result', ['$rootScope','$compile',function($scope,$compile) {
                     $('#language').text(parsed.Language);
                     $('#imdbrating').text(parsed.imdbRating);
                     $('#released').text(parsed.Released);
-                    location.href = "#/result";
+
 
                 },
                 error: function(data) {
@@ -51,9 +52,11 @@ Quotr.factory('Result', ['$rootScope','$compile',function($scope,$compile) {
                 }
             });
 
-            
 
-		    /*$.get(url, function(data){
+
+		    /*
+		    url="http://52.30.239.185/search/"+toSearch+"/"+uuid;
+		    $.get(url, function(data){
 
                 parsed=JSON.parse(data);
                 if(parsed.Type!="Episode")
@@ -84,7 +87,7 @@ Quotr.factory('Result', ['$rootScope','$compile',function($scope,$compile) {
                 $('#released').text(parsed.Released);
 
     	    });*/
-
+            location.href = "#/result";
             $("#quoteText").text("");
 
 
@@ -97,12 +100,12 @@ Quotr.factory('Result', ['$rootScope','$compile',function($scope,$compile) {
 		},
 
         recommend: function(imdbId,uuid){
-        url="http://52.30.239.185/ref/"+imdbId+"/"+uuid;
-        $.get(url, function(data){
-            rec=JSON.parse(data);
-            $scope.recommended=rec;
-        });
-    }
+            url="http://52.30.239.185/ref/"+imdbId+"/"+uuid;
+            $.get(url, function(data){
+                rec=JSON.parse(data);
+                $scope.recommended=rec;
+            });
+        }
 	};
 
 
