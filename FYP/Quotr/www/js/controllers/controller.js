@@ -16,13 +16,18 @@ Quotr.controller('Controller',['$scope','Home','Result','History','Top20',functi
 
 	$scope.search= function() {
 		//Send to contents of text box to result.js service where user will be brought to result page
-		Result.search(uuid);
+		Result.search(uuid,$("#quoteText").val());
 	};
 	$scope.cancel= function() {
 		//Cancels search
 		Result.cancel();
 	};
 
+
+	$scope.recommend= function() {
+
+		Result.recommend($('#poster').attr('alt'),uuid);
+	};
 
 	$scope.showhistory= function() {
 		//Show history of a user
@@ -34,6 +39,12 @@ Quotr.controller('Controller',['$scope','Home','Result','History','Top20',functi
 		//Top 20 searched Series and Movies
 		Top20.top20(type);
 	};
+
+	$scope.retrieve= function(imdbId) {
+		Result.search(uuid,imdbId);
+	};
+
+
 
 
 }]);

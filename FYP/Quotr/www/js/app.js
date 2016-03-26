@@ -33,6 +33,11 @@ Quotr.config(['$routeProvider', function($routeProvider) {
       controller: 'Controller',
 
     }).
+      when('/noresult', {
+      templateUrl: 'views/noresult.html',
+      controller: 'Controller',
+
+    }).
     otherwise({
       redirectTo: '/home'
     });

@@ -1,15 +1,59 @@
-Quotr.factory('Result', ['$rootScope',function($scope) {
+Quotr.factory('Result', ['$rootScope','$compile',function($scope,$compile) {
 
     //$("#searchText").hide();
 
 	return{
 
-		search: function(uuid){
+		search: function(uuid,toSearch){
 
-			url="http://52.30.239.185/search/"+$("#quoteText").val()+"/"+uuid;
+			url="http://52.30.239.185/search/"+toSearch+"/"+uuid;
 
 
-		    $.get(url, function(data){
+            $.ajax({
+                url: 'http://52.30.239.185/search/'+toSearch+'/'+uuid,
+                type: 'GET',
+                success: function(data){
+                    parsed=JSON.parse(data);
+                    if(parsed.Type!="Episode")
+                    {
+                        $('#seasontab').hide();
+                        $('#episodetab').hide();
+                    }
+                    else
+                    {
+                        $('#season').text(parsed.Season);
+                        $('#episode').text(parsed.Episode);
+
+                    }
+                    $('#plot').text(parsed.Plot);
+                    $('#poster').attr("src",parsed.Poster);
+                    $('#poster').attr("alt",parsed.imdbID);
+                    $('#rated').text(parsed.Rated);
+                    $('#title').text(parsed.Title);
+                    $('#writer').text(parsed.Writer);
+                    $('#actor').text(parsed.Actors);
+                    $('#director').text(parsed.Director);
+                    $('#genre').text(parsed.Genre);
+                    $('#year').text(parsed.Year);
+                    $('#runtime').text(parsed.Runtime);
+                    $('#country').text(parsed.Country);
+                    $('#language').text(parsed.Language);
+                    $('#imdbrating').text(parsed.imdbRating);
+                    $('#released').text(parsed.Released);
+                    location.href = "#/result";
+
+                },
+                error: function(data) {
+                    location.href = "#/noresult";
+
+                    $("#quoteSearched").text(toSearch);
+
+                }
+            });
+
+            
+
+		    /*$.get(url, function(data){
 
                 parsed=JSON.parse(data);
                 if(parsed.Type!="Episode")
@@ -25,6 +69,7 @@ Quotr.factory('Result', ['$rootScope',function($scope) {
                 }
                 $('#plot').text(parsed.Plot);
                 $('#poster').attr("src",parsed.Poster);
+                $('#poster').attr("alt",parsed.imdbID);
                 $('#rated').text(parsed.Rated);
                 $('#title').text(parsed.Title);
                 $('#writer').text(parsed.Writer);
@@ -37,11 +82,10 @@ Quotr.factory('Result', ['$rootScope',function($scope) {
                 $('#language').text(parsed.Language);
                 $('#imdbrating').text(parsed.imdbRating);
                 $('#released').text(parsed.Released);
-                recommend(parsed.imdbID,uuid);
-    	    });
+
+    	    });*/
 
             $("#quoteText").text("");
-            location.href = "#/result";
 
 
 		},
@@ -50,15 +94,16 @@ Quotr.factory('Result', ['$rootScope',function($scope) {
             $("#quoteText").text("");
             location.href = "#";
 
-		}
-	};
+		},
 
-    function recommend(imdbId,uuid){
+        recommend: function(imdbId,uuid){
         url="http://52.30.239.185/ref/"+imdbId+"/"+uuid;
-        alert(url);
         $.get(url, function(data){
             rec=JSON.parse(data);
             $scope.recommended=rec;
         });
-    };
+    }
+	};
+
+
 }]);

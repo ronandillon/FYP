@@ -2,15 +2,18 @@
  <div style="margin-top:100px;" width="100%">
 
 	{{showhistory()}}
-	 <table cellspacing="0" cellpadding="0" border="0" width="100%">
+	{{showhistory()}}
+	 <table cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed; width: 100%;">
 	 <tbody>
 		 <tr  ng-repeat="hist in userhistory" style="display:block;clear:both;">
 
 			<td>
-				 <img  src="{{hist[2]}}"  height="400"  width="300" >
+				 <img  src="{{hist[2]}}"  ng-click="retrieve(hist[5])" height="400"  width="300" >
 			</td>
-			 <td>
+			 <td width="100%">
 				 <h1>{{hist[0]}}</h1>
+				 <h4>{{hist[3]}}</h4>
+				 <h2>{{hist[4]}}</h2>
 				 <h3>IMDB RATING : {{hist[1]}}</h3>
 			</td>
 		</tr>

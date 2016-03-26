@@ -1,23 +1,25 @@
  <section class="card top20">
  <div style="margin-top:100px;"  >
 	 <div>
-	 <div >
-	 <button class="btn btn-default" ng-click="top20('top20')" style="float:left">All</button>
-	 <button class="btn btn-default" ng-click="top20('mtop20')" style="float:left">Movies</button>
-	 <button class="btn btn-default" ng-click="top20('stop20')" style="float:left">Series</button>
-	 <button class="btn btn-default" ng-click="top20('etop20')" style="float:left">Episodes</button>
-	 </div>
+
+	<section layout="row" style="text-align: center" layout-sm="column" layout-align="center center">
+	  <md-button class="groupX left"  ng-click="top20('top20')">All</md-button>
+	  <md-button class="groupX middle"  ng-click="top20('mtop20')">Movies</md-button>
+	  <md-button class="groupX middle"  ng-click="top20('stop20')">Series</md-button>
+	  <md-button class="groupX right"  ng-click="top20('etop20')">Episodes</md-button>
+	</section>
 
 	<div style="clear:both;">
-	<table cellspacing="0" cellpadding="0" border="0" width="100%">
+	<table cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed; width: 100%;">
 		<tbody>
 		<tr  class="column" ng-repeat="column in list" style="display:block;">
 		<td>
-			<img  src="{{column[3]}}"  height="400"  width="300">
+			<img  src="{{column[3]}}" ng-click="retrieve(column[0])" height="400"  width="300">
 		</td>
-		<td>
+		<td width="100%">
 			<h1>{{column[1]}}</h1>
 			<h2>{{column[4]}}</h2>
+			<h4>{{column[6]}}</h4>
 			<h3>IMDB RATING : {{column[2]}}</h3>
 		</td>
 		</tr>

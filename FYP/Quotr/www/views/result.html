@@ -1,10 +1,12 @@
 <section class="card result">
-<div class="centerText" style="position:absolute;">
+<div style="margin-top:100px;">
     <h1 id="title">Simpsons Roasting on an Open Fire (1989)</h1>
-    <img id="poster" src="http://ia.media-imdb.com/images/M/MV5BZGZjNzZhNzAtYTZjNi00YjU4LWI0NTYtNjZmYWNkYTA2YzY3XkEyXkFqcGdeQXVyMjYwNDA2MDE@._V1_SX300.jpg" alt="The Simpsons" >
+    <img id="poster" style="float: left;" src="http://ia.media-imdb.com/images/M/MV5BZGZjNzZhNzAtYTZjNi00YjU4LWI0NTYtNjZmYWNkYTA2YzY3XkEyXkFqcGdeQXVyMjYwNDA2MDE@._V1_SX300.jpg" height="400"  width="300" >
+    <h2 id="plot" style="position: relative;">Christmas seems doomed for the Simpson family when Homer receives no holiday bonus. Hoping to make extra money, he becomes a mall Santa Claus in an attempt to bring the family a happy holiday.</h2>
 
-    <h2 id="plot">Christmas seems doomed for the Simpson family when Homer receives no holiday bonus. Hoping to make extra money, he becomes a mall Santa Claus in an attempt to bring the family a happy holiday.</h2>
-    <table>
+    <div>
+    <table width="100%">
+    <tbody>
     <tr>
         <td>Director</td>
         <td id="director">David Silverman</td>
@@ -53,17 +55,23 @@
         <td>imdb Rating</td>
         <td id="imdbrating">8.2</td>
     </tr>
+    </tbody>
     </table>
-</div>
- <div  ng-repeat="rec in recommended" style="display:block;">
+    <section layout="row" style="text-align: center" layout-sm="column" layout-align="center center">
+	  <md-button class="groupX lone"  ng-click="recommend()">Recommendations</md-button>
+    </section>
+    </div>
+    <div style="clear:both;">
 
-		 <h1>{{rec[1]}}</h1>
+     <table width="100%" >
 
-		 <img  src="{{rec[3]}}" >
+     <td  ng-repeat="rec in recommended" style="text-align:center; ">
+		 <h2>{{rec[1]}}</h2>
+		 <img  src="{{rec[3]}}" ng-click="retrieve(rec[0])" height="200" width="50%" >
+		 <h4>IMDB RATING : {{rec[2]}}</h4>
+         <br>
+     </td>
 
-		 <h3>IMDB RATING : {{rec[2]}}</h3>
-        <br>
- </div>
+     </table>
+</div></div>
 </section>
-
-
