@@ -1279,7 +1279,7 @@ h3,
 }
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 40px;
 }
 h5,
 .h5 {
@@ -3002,9 +3002,9 @@ select[multiple].input-lg {
 }
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 12px 24px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 28px;
   font-weight: normal;
   line-height: 1.42857143;
   text-align: center;
@@ -5891,7 +5891,7 @@ button.list-group-item-danger.active:focus {
 }
 .close {
   float: right;
-  font-size: 21px;
+  font-size: 50px;
   font-weight: bold;
   line-height: 1;
   color: #000;

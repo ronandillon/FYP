@@ -10,6 +10,38 @@ Quotr.controller('Controller',['$scope','Home','Result','History','Top20',functi
 	$scope.record = function() {
 
 
+
+		bootbox.dialog({
+                title: "Edit Your Quote",
+                message: '<div class="row"width="100%">  ' +
+                    '<div class="col-md-12"width="100%"> ' +
+                    '<form class="form-horizontal"> ' +
+                    '<div class="form-group" width="100%"> ' +
+                    '<div class="col-md-4" width="100%" > ' +
+                    '<textarea id="quoteText"  type="text" width="300px" style="font-size: 50px;" rows="12"></textarea> ' +
+                    '<span class="help-block"></span> </div> ' +
+                    '</div> ' +
+                    '</form> </div> </div>',
+                buttons: {
+					cancel:{
+						label:"Cancel",
+						callback: function(){
+
+						}
+					},
+                    success: {
+                        label: "Send",
+                        className: "btn-success",
+						size: "large",
+                        callback: function () {
+                            Result.search(uuid,$("#quoteText").val());
+                        }
+                    }
+
+                }
+            }
+        );
+
 		Home.record();
 
 	};

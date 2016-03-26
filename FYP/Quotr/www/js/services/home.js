@@ -16,7 +16,7 @@ Quotr.factory('Home', ['$rootScope',function($scope) {
 
 				console.log("Error message: " + errorMessage);
 			}, maxMatches, promptString, language);
-			location.href = "#/search";
+			//location.href = "#/search";
 
 		}
 	};
