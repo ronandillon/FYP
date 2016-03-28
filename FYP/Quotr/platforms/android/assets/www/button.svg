@@ -1,0 +1,47 @@
+<svg viewBox="0 0 100 100" hola_ext_inject="disabled">
+
+
+		<!-- Main Circle -->
+		<circle cx="50" cy="50" r="50%" stroke-width="4" style="fill:rgb(255,255,255);"/>
+
+		<!-- Tv Frame -->
+		<rect x="20" y="30" width="60%" height="40%" style="fill:rgb(255,255,255);stroke-width:2%;stroke:rgb(0,0,0)"/>
+
+		<!-- TV Screen -->
+		<rect x="25" y="35" width="40%" height="30%" style="fill:rgb(255,255,255);stroke-width:1%;stroke:rgb(0,0,0)"/>
+
+		<!-- Screen Colours -->
+		<rect x="25" y="35" width="5.714%" height="30%" style="fill:rgb(255,255,255);"/>
+		<rect x="30.7" y="35" width="5.714" height="30%" style="fill:rgb(255,255,0);"/>
+		<rect x="36.4" y="35" width="5.714%" height="30%" style="fill:rgb(0,255,255);"/>
+		<rect x="42.1" y="35" width="5.714%" height="30%" style="fill:rgb(0,255,100);"/>
+		<rect x="47.8" y="35" width="5.714%" height="30%" style="fill:rgb(255,100,255);"/>
+		<rect x="53.5" y="35" width="5.714%" height="30%" style="fill:rgb(255,0,0);"/>
+		<rect x="59.2" y="35" width="5.714%" height="30%" style="fill:rgb(0,0,255);"/>
+
+
+		<rect x="25" y="60" width="5.714%" height="5" style="fill:rgb(0,0,255);"/>
+		<rect x="30.7" y="60" width="5.714" height="5" style="fill:rgb(0,0,0);"/>
+		<rect x="36.4" y="60" width="5.714" height="5" style="fill:rgb(255,100,255);"/>
+		<rect x="42.1" y="60" width="5.714" height="5" style="fill:rgb(0,0,0);"/>
+		<rect x="47.8" y="60" width="5.714" height="5" style="fill:rgb(0,255,255);"/>
+		<rect x="53.5" y="60" width="5.714" height="5" style="fill:rgb(0,0,0);"/>
+		<rect x="59.2" y="60" width="5.714" height="5" style="fill:rgb(255,255,255);"/>
+
+
+		<!-- Areal Base -->
+		<path d="M 30 30 q 20 -20 40 0" stroke="black" stroke-width="1" fill="black"/>
+
+		<!-- Areal -->
+		<polyline points="30,10 15,20 50,30" style="fill:none;stroke:black;stroke-width:2 "/>
+		<polyline points="65,10 55,5 50,30" style="fill:none;stroke:black;stroke-width:2"/>
+		<circle cx="30" cy="10" r="5" fill="black"/>
+		<circle cx="65" cy="10" r="5" fill="black"/>
+
+		<!-- Buttons -->
+		<circle cx="72" cy="40" r="4" stroke="black" stroke-width=".5" fill="white"/>
+		<circle cx="72" cy="55" r="4" stroke="black" stroke-width=".5" fill="white"/>
+		<line x1="75" y1="43" x2="69" y2="37" stroke="black" stroke-width="1"/>
+		<line x1="72" y1="51" x2="72" y2="59" stroke="black" stroke-width="1"/>
+
+</svg>

@@ -1,4 +1,4 @@
-var Quotr = angular.module('Quotr', ['ngRoute']).constant('FIREBASE_URL');
+var Quotr = angular.module('Quotr', ['ngRoute','ngMaterial']).constant('FIREBASE_URL');
 
 
 Quotr.config(['$routeProvider', function($routeProvider) {
@@ -11,35 +11,39 @@ Quotr.config(['$routeProvider', function($routeProvider) {
     }).
     when('/top20', {
       templateUrl: 'views/top20.html',
-      //controller: 'Controller'
+      controller: 'Controller'
       
     }).
     when('/history', {
       templateUrl: 'views/history.html',
-      //controller: 'Controller'
+      controller: 'Controller'
     }).
     when('/about', {
       templateUrl: 'views/about.html',
-      //controller: 'Controller',
+      controller: 'Controller',
       
+    }).
+    when('/search', {
+      templateUrl: 'views/search.html',
+      controller: 'Controller',
+
+    }).
+      when('/result', {
+      templateUrl: 'views/result.html',
+      controller: 'Controller',
+
+    }).
+      when('/noresult', {
+      templateUrl: 'views/noresult.html',
+      controller: 'Controller',
+
     }).
     otherwise({
       redirectTo: '/home'
     });
 }]);
-document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() {     
-	//$('#uhoh').text('Device UUID: '+ device.uuid);
-	
-	sUrl = 'http://52.30.239.185/search/scup/wup'
-	$.get(sUrl,function(data) {
-       alert('page content: ' + data);
-	   $('#uhoh').text(data);
-    }
-);
-		
-}
+
 Quotr.run(['$rootScope','$location', function($rootScope,$location){
 	$rootScope.$on('$routeChangeError',function(event,next,previous,error){
 		if(error=='AUTH_REQUIRED'){

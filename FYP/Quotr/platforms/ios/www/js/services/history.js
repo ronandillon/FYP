@@ -1,4 +1,4 @@
-Quotr.factory('History', ['$rootScope',function($scope) {
+Quotr.factory('History', ['$rootScope',function($scope,$http) {
 
     //$("#searchText").hide();
 
@@ -6,14 +6,34 @@ Quotr.factory('History', ['$rootScope',function($scope) {
 
 		showhistory: function(uuid){
 
-			url="http://52.30.239.185/history/'"+uuid+"'";
+			$.ajax({
+                url: 'http://52.30.239.185/history/\''+uuid+'\'',
+                type: 'GET',
+                success: function(data){
+					if(data=='[]'){
+						 $("#noHistory").text("You have no history yet.");
+					}
+					else {
+						hist = JSON.parse(data);
+						$scope.userhistory = hist;
+					}
+				 },
+                error: function(data) {
+                    $("#noHistory").text("You have no history yet.");
+                }
+			});
 
-            alert(url);
+		    /*
+		    url="http://52.30.239.185/history/'"+uuid+"'";
 		    $.get(url, function(data){
-                alert(data);
-            });
+				hist=JSON.parse(data);
+                $scope.userhistory=hist;
+
+            })*/
 
 		}
 	};
 
 }]);
+
+

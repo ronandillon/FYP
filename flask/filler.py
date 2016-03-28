@@ -152,7 +152,7 @@ def ref(imdbid,uuid):
     conn = sqlite3.connect('/tmp/quotr.db')
     c = conn.cursor()
 
-    query = c.execute("select * FROM Show WHERE imdbId IN (select imdbId from Searched WHERE imdbID !='"+imdbid+"' AND deviceId IN (SELECT deviceId from Sea$
+    #query = c.execute("select * FROM Show WHERE imdbId IN (select imdbId from Searched WHERE imdbID !='"+imdbid+"' AND deviceId IN (SELECT deviceId from Sea
     returns = query.fetchall()
     return json.dumps(returns)
 

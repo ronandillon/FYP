@@ -1,60 +1,81 @@
 <section class="card result">
-<div class="centerText" style="position:absolute;">
-    <h1 id="title">Simpsons Roasting on an Open Fire (1989)</h1>
-    <img id="poster" src="http://ia.media-imdb.com/images/M/MV5BZGZjNzZhNzAtYTZjNi00YjU4LWI0NTYtNjZmYWNkYTA2YzY3XkEyXkFqcGdeQXVyMjYwNDA2MDE@._V1_SX300.jpg" alt="The Simpsons" >
-
-    <h2 id="plot">Christmas seems doomed for the Simpson family when Homer receives no holiday bonus. Hoping to make extra money, he becomes a mall Santa Claus in an attempt to bring the family a happy holiday.</h2>
-    <table>
+<div style="margin-top:11%;">
+    <div>
+    <img id="poster" style="float: left;" src="" height="30%"  width="35%" >
+    <div style="position: relative;">
+    <h1 id="title"></h1>
+    <h2 id="year" ></h2>
+    <h3 id="plot" ></h3>
+    </div></div>
+    <br>
+    <div>
+    <table width="100%">
+    <tbody>
     <tr>
         <td>Director</td>
-        <td id="director">David Silverman</td>
+        <td id="director"></td>
     </tr>
     <tr>
         <td>Writer</td>
-        <td id="writer">Mimi Pond <br> Matt Groening (created by) <br>James L. Brooks (developed by) <br> Matt Groening (developed by)<br> Sam Simon (developed by)</td>
+        <td id="writer"></td>
     </tr>
     <tr>
         <td>Actor</td>
-        <td id="actor">Dan Castellaneta <br>Julie Kavner<br> Nancy Cartwright<br> Yeardley Smith</td>
+        <td id="actor"></td>
     </tr>
     <tr>
         <td>Language</td>
-        <td id="language">English</td>
+        <td id="language"></td>
     </tr>
     <tr>
         <td>Country</td>
-        <td id="country">USA</td>
+        <td id="country"></td>
     </tr>
     <tr>
         <td>Rated</td>
-        <td id="rated">TV-G</td>
+        <td id="rated"></td>
     </tr>
     <tr id="seasontab">
         <td>Season</td>
-        <td id="season">1</td>
+        <td id="season"></td>
     </tr>
     <tr id="episodetab">
         <td>Episode</td>
-        <td id="episode">1</td>
+        <td id="episode"></td>
     </tr>
     <tr>
         <td>Genre</td>
-        <td id="genre">Animation <br> Comedy</td>
+        <td id="genre"></td>
     </tr>
     <tr>
         <td>Released</td>
-        <td id="released">17 Dec 1989</td>
+        <td id="released"></td>
     </tr>
     <tr>
         <td>Run Time</td>
-        <td id="runtime">30 min</td>
+        <td id="runtime"></td>
     </tr>
     <tr>
-        <td>imdb Rating</td>
-        <td id="imdbrating">8.2</td>
+        <td>IMDb Rating</td>
+        <td id="imdbrating"></td>
     </tr>
+    </tbody>
     </table>
-</div>
+    <section layout="row" style="text-align: center" layout-sm="column" layout-align="center center">
+	  <md-button class="groupX lone"  ng-click="recommend()">Recommendations</md-button>
+    </section>
+    </div>
+    <div style="clear:both;">
+
+    <table  width="100%">
+    <tr>
+     <td ng-repeat="rec in recommended" style="text-align:center;">
+		 <h2>{{rec[1]}}</h2>
+		 <img  src="{{rec[3]}}" ng-click="retrieve(rec[0])" width="80%" height="25%" >
+		 <h4>IMDB RATING : {{rec[2]}}</h4>
+         <br>
+     </td>
+    </tr>
+     </table>
+</div></div>
 </section>
-
-
