@@ -1,26 +1,55 @@
 <section class="card history">
- <div style="margin-top:100px;" width="100%">
+<div style="margin-top:100px;" align="center">
 
-	{{showhistory()}}
-	{{showhistory()}}
 
-	 <h1 id="noHistory"></h1>
+	<!-- START THE FEATURETTES -->
 
-	 <table cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed; width: 100%;">
-	 <tbody>
-		 <tr  ng-repeat="hist in userhistory" style="display:block;clear:both;">
+	<hr class="featurette-divider">
 
-			<td>
-				 <img  src="{{hist[2]}}"  ng-click="retrieve(hist[5])" height="400"  width="300" >
-			</td>
-			 <td width="100%">
-				 <h1>{{hist[0]}}</h1>
-				 <h4>{{hist[3]}}</h4>
-				 <h2>{{hist[4]}}</h2>
-				 <h3>IMDB RATING : {{hist[1]}}</h3>
-			</td>
-		</tr>
-	</tbody>
-	</table>
- </div>
+	<div class="row featurette">
+	<div class="col-md-7">
+	  <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+	  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+	</div>
+	<div class="col-md-5">
+	  <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+	</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+	<div class="col-md-7 col-md-push-5">
+	  <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+	  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+	</div>
+	<div class="col-md-5 col-md-pull-7">
+	  <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+	</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+	<div class="col-md-7">
+	  <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+	  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+	</div>
+	<div class="col-md-5">
+	  <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+	</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+	<!-- /END THE FEATURETTES -->
+
+
+	<!-- FOOTER -->
+	<footer>
+	<p class="pull-right"><a href="#/top20">Back to top</a></p>
+	<p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+	</footer>
+
+</div>
 </section>

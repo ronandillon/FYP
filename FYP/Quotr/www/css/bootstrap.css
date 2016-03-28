@@ -1279,7 +1279,7 @@ h3,
 }
 h4,
 .h4 {
-  font-size: 40px;
+  font-size: 18px;
 }
 h5,
 .h5 {
@@ -3002,21 +3002,21 @@ select[multiple].input-lg {
 }
 .btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 6px 12px;
   margin-bottom: 0;
-  font-size: 28px;
+  font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-  touch-action: manipulation;
+      touch-action: manipulation;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -5891,7 +5891,7 @@ button.list-group-item-danger.active:focus {
 }
 .close {
   float: right;
-  font-size: 50px;
+  font-size: 21px;
   font-weight: bold;
   line-height: 1;
   color: #000;
