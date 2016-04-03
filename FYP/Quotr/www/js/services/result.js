@@ -5,7 +5,7 @@ Quotr.factory('Result', ['$rootScope','$compile',function($scope,$compile) {
 	return{
 
 		search: function(uuid,toSearch){
-
+            alert("result")
 
             $scope.recommended="";
 
