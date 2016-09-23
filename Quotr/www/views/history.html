@@ -1,55 +1,26 @@
 <section class="card history">
-<div style="margin-top:100px;" align="center">
+ <div style="margin-top:11%;" width="100%">
 
+	{{showhistory()}}
+	{{showhistory()}}
 
-	<!-- START THE FEATURETTES -->
+	 <h1 id="noHistory"></h1>
 
-	<hr class="featurette-divider">
+	 <table cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed; width: 100%;">
+	 <tbody>
+		 <tr  ng-repeat="hist in userhistory" height="25%" style="display:block;clear:both;">
 
-	<div class="row featurette">
-	<div class="col-md-7">
-	  <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-	  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-	</div>
-	<div class="col-md-5">
-	  <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-	</div>
-	</div>
-
-	<hr class="featurette-divider">
-
-	<div class="row featurette">
-	<div class="col-md-7 col-md-push-5">
-	  <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-	  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-	</div>
-	<div class="col-md-5 col-md-pull-7">
-	  <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-	</div>
-	</div>
-
-	<hr class="featurette-divider">
-
-	<div class="row featurette">
-	<div class="col-md-7">
-	  <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-	  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-	</div>
-	<div class="col-md-5">
-	  <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-	</div>
-	</div>
-
-	<hr class="featurette-divider">
-
-	<!-- /END THE FEATURETTES -->
-
-
-	<!-- FOOTER -->
-	<footer>
-	<p class="pull-right"><a href="#/top20">Back to top</a></p>
-	<p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-	</footer>
-
-</div>
+			<td width="35%">
+				 <img  src="{{hist[2]}}"  ng-click="retrieve(hist[5])" height="50%"  width="100%" >
+			</td>
+			 <td width="75%">
+				 <h1>{{hist[0]}}</h1>
+				 <h2>({{hist[3]}})</h2><br>
+				 <h4>{{hist[4]}}</h4><br><br>
+				 <h5>IMDB RATING : {{hist[1]}}</h5>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+ </div>
 </section>
